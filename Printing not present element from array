@@ -1,0 +1,57 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+ vector<int> pv(const vector<int>& arr, int k) {
+
+   vector<int> ms;
+    int j=1;
+    int s=ms.size();
+    
+
+    while (s<k) {
+
+bool flag=true;
+        for (int i = 0; i < arr.size(); i++) {
+            if (j == arr[i]) {
+                   j++;
+                   flag=false;
+                   s=ms.size();
+              break; 
+            }
+        }
+
+           if(flag==true)
+           {
+            ms.push_back(j);
+            j++;
+           }
+           
+            s=ms.size();
+       
+    }
+  
+
+    return ms;
+}
+
+int main() {
+   
+    vector<int> arr = {1, 4, 7,3,4};
+    int k = 5;
+    vector<int> ms = pv(arr,k);
+   
+        cout<<ms.back()<<endl;
+        
+    
+   
+   
+
+
+
+    return 0;
+}
+
+
+
